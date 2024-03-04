@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mysql -u root -p"${MARIADB_ROOT_PASSWORD}" --execute \
+"CREATE DATABASE IF NOT EXISTS ${MARIADB_DATABASE}_test COLLATE 'utf8_general_ci';
+GRANT ALL PRIVILEGES ON ${MARIADB_DATABASE}_test.* TO '$MARIADB_USER'@'%';"
